@@ -26,16 +26,14 @@
     </div>
     <script>
         fetch('posts.json')
-            .then(res => res.json())
-            .then(posts => {
-                document.getElementById('posts').innerHTML = posts
-                    .map(post => `
-                        <div>
-                            <a href="${post.slug}.html">${post.title}</a>
-                        </div>
-                    `)
-                    .join('');
-            });
-    </script>
+          .then(res => res.json())
+          .then(posts => {
+            console.log('Posts:', posts); // Add this
+            document.getElementById('posts').innerHTML = posts
+              .map(post => `<div><a href="${post.slug}.html">${post.title}</a></div>`)
+              .join('');
+          })
+          .catch(error => console.error('Error:', error)); // Add this
+        </script>
 </body>
 </html>
