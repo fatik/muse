@@ -12,20 +12,16 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v3
-      
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-          
       - name: Install dependencies
         run: npm install @notionhq/client notion-to-md marked
-        
       - name: Sync Notion
         run: node sync.js
         env:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-          
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
