@@ -1,0 +1,41 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essays</title>
+    <style>
+        body {
+            font-family: -apple-system, system-ui, sans-serif;
+            line-height: 1.6;
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 0 10px;
+            color: #333;
+            background: #fff;
+        }
+        a { color: #333; }
+        h1 { margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+    <h1>Essays</h1>
+    <div id="posts">
+        <!-- Posts will be inserted here -->
+    </div>
+    <script>
+        fetch('posts.json')
+            .then(res => res.json())
+            .then(posts => {
+                document.getElementById('posts').innerHTML = posts
+                    .map(post => `
+                        <div>
+                            <a href="${post.slug}.html">${post.title}</a>
+                        </div>
+                    `)
+                    .join('');
+            });
+    </script>
+</body>
+</html>
