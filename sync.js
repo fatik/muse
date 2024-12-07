@@ -11,12 +11,14 @@ async function syncNotion() {
 
        console.log('Querying database...');
        const pages = await notion.databases.query({
-           database_id: process.env.NOTION_DATABASE_ID,
-           filter: {
-               property: 'Status',
-               status: { equals: 'Published' }
-           }
-       });
+        database_id: process.env.NOTION_DATABASE_ID,
+        filter: {
+            property: 'status',
+            select: {           
+                equals: 'Published'
+            }
+        }
+    });
 
        console.log(`Found ${pages.results.length} published pages`);
        const posts = [];
