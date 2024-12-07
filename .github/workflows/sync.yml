@@ -1,7 +1,9 @@
 name: Sync and Deploy
 on:
+  repository_dispatch:
+    types: [notion-update]
   schedule:
-    - cron: '0 * * * *'
+    - cron: '*/5 * * * *'  # Checks every 5 minutes
   workflow_dispatch:
 jobs:
   build-and-deploy:
