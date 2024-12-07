@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "title": "Well this is another",
+    "slug": "another",
+    "date": "12/7/2024"
+  },
+  {
+    "title": "Design as identity",
+    "slug": "design-identity",
+    "date": "12/7/2024"
+  }
+]

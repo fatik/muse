@@ -32,7 +32,7 @@ async function syncNotion() {
                console.log(`Title: ${title}, Slug: ${slug}`);
                
                const mdBlocks = await n2m.pageToMarkdown(page.id);
-               const markdown = n2m.toMarkdownString(mdBlocks);
+               const markdown = n2m.toMarkdownString(mdBlocks).parent;
                console.log('Generated markdown');
                
                const html = `<!DOCTYPE html>
