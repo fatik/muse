@@ -52,6 +52,12 @@ async function syncNotion() {
            background: #fff;
        }
        a { color: #333; }
+       img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
    </style>
 </head>
 <body>
