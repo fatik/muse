@@ -1,5 +1,10 @@
 [
   {
+    "title": "New post",
+    "slug": "test post",
+    "date": "12/8/2024"
+  },
+  {
     "title": "The romanticism of mythical A-players",
     "slug": "a-players",
     "date": "12/8/2024"
