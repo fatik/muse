@@ -1,5 +1,10 @@
 [
   {
+    "title": "test 123",
+    "slug": "test-123",
+    "date": "12/22/2024"
+  },
+  {
     "title": "New post",
     "slug": "test post",
     "date": "12/22/2024"
